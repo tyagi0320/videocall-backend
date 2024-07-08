@@ -4,12 +4,12 @@ const app = express()
 const server = http.createServer(app)
 const io = require("socket.io")(server, {
 	cors: {
-		origin: "http://localhost:3000",
-		methods: [ "GET", "POST" ]
+		 origin: ["http://localhost:3000", "https://zoomifyy.onrender.com"],
+                  methods: ["GET", "POST"]
 	}
 })
 
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 10000
 io.on("connection", (socket) => {
 	socket.emit("me", socket.id)
 
